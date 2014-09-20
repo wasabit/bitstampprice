@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface Bitstamp : NSObject
-- (float)price;
+@property (NS_NONATOMIC_IOSONLY, readonly) float price;
 @end

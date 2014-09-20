@@ -12,20 +12,24 @@
 	<dict>
 		<key>AD291FC7-437A-4C16-B75F-2752577734FB</key>
 		<string>ssh://github.com/wasabit/bitstampprice.git</string>
+		<key>DD0EB214DB547A7CD540827B334DC5CAD883270B</key>
+		<string>github.com:wasabit/bitstampprice.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Bitstamp Price.xcodeproj/project.xcworkspace</string>
+	<string>Bitstamp Price.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AD291FC7-437A-4C16-B75F-2752577734FB</key>
+		<string>../../../Bitstamp Price</string>
+		<key>DD0EB214DB547A7CD540827B334DC5CAD883270B</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/wasabit/bitstampprice.git</string>
+	<string>github.com:wasabit/bitstampprice.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>AD291FC7-437A-4C16-B75F-2752577734FB</string>
+	<string>DD0EB214DB547A7CD540827B334DC5CAD883270B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>AD291FC7-437A-4C16-B75F-2752577734FB</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Bitstamp Price</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DD0EB214DB547A7CD540827B334DC5CAD883270B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Bitstamp%20Price</string>
 		</dict>
 	</array>
 </dict>

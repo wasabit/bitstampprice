@@ -18,7 +18,7 @@
 
 @implementation AppDelegate
 
-- (id) init
+- (instancetype) init
 {
     self = [super init];
     if (self) {
@@ -37,7 +37,7 @@
         if (!temp) {
             NSLog(@"Error reading plist: %@, format: %lu", errorDesc, format);
         }
-        self.timeInterval = [[temp objectForKey:@"Interval"] floatValue];
+        self.timeInterval = [temp[@"Interval"] floatValue];
 
     }
     return self;
@@ -86,11 +86,11 @@
         foreColor = [NSColor whiteColor];
     }
 
-    [attributes setObject:foreColor forKey:NSForegroundColorAttributeName];
-    [attributes setObject:[NSColor blackColor] forKey:NSBackgroundColorAttributeName];
+    attributes[NSForegroundColorAttributeName] = foreColor;
+    attributes[NSBackgroundColorAttributeName] = [NSColor blackColor];
 
     NSFont *font = [NSFont systemFontOfSize:14];
-    [attributes setObject:font forKey:NSFontAttributeName];
+    attributes[NSFontAttributeName] = font;
 
 
     title = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"$%.2f", price]

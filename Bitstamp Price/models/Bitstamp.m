@@ -31,7 +31,7 @@
         NSDictionary *result = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
 
         if (error == nil)
-            price_value = [[result objectForKey:@"last"] floatValue];
+            price_value = [result[@"last"] floatValue];
     }
 
     return price_value;
