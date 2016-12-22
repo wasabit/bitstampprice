@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B74A31331FDA7C7F009261D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A31321FDA7C7F009261D9 /* AppDelegate.swift */; };
+		B74A31371FDA7C7F009261D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B74A31361FDA7C7F009261D9 /* Assets.xcassets */; };
+		B74A313A1FDA7C7F009261D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B74A31381FDA7C7F009261D9 /* Main.storyboard */; };
+		B74A31531FDA7C9C009261D9 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A31521FDA7C9C009261D9 /* Ticker.swift */; };
+		B74A31551FDA7CA3009261D9 /* BitstampPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A31541FDA7CA3009261D9 /* BitstampPriceTests.swift */; };
+		B74A31571FDA7CE0009261D9 /* TickerFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74A31561FDA7CE0009261D9 /* TickerFetcher.swift */; };
+		B7E1F8EF1FDB008D007738DB /* Bitstamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7E1F8EE1FDB008D007738DB /* Bitstamp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B74A31421FDA7C7F009261D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B74A31271FDA7C7F009261D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B74A312E1FDA7C7F009261D9;
+			remoteInfo = BitstampPrice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B74A312F1FDA7C7F009261D9 /* BitstampPrice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitstampPrice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B74A31321FDA7C7F009261D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B74A31361FDA7C7F009261D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B74A31391FDA7C7F009261D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B74A313B1FDA7C7F009261D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B74A313C1FDA7C7F009261D9 /* BitstampPrice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BitstampPrice.entitlements; sourceTree = "<group>"; };
+		B74A31411FDA7C7F009261D9 /* BitstampPriceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitstampPriceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B74A31471FDA7C7F009261D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B74A31521FDA7C9C009261D9 /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ticker.swift; path = ../../../.Trash/Ticker.swift; sourceTree = "<group>"; };
+		B74A31541FDA7CA3009261D9 /* BitstampPriceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitstampPriceTests.swift; path = ../../../.Trash/BitstampPriceTests.swift; sourceTree = "<group>"; };
+		B74A31561FDA7CE0009261D9 /* TickerFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TickerFetcher.swift; sourceTree = "<group>"; };
+		B7E1F8EE1FDB008D007738DB /* Bitstamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitstamp.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B74A312C1FDA7C7F009261D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B74A313E1FDA7C7F009261D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B74A31261FDA7C7F009261D9 = {
+			isa = PBXGroup;
+			children = (
+				B74A31311FDA7C7F009261D9 /* BitstampPrice */,
+				B74A31441FDA7C7F009261D9 /* BitstampPriceTests */,
+				B74A31301FDA7C7F009261D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B74A31301FDA7C7F009261D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B74A312F1FDA7C7F009261D9 /* BitstampPrice.app */,
+				B74A31411FDA7C7F009261D9 /* BitstampPriceTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B74A31311FDA7C7F009261D9 /* BitstampPrice */ = {
+			isa = PBXGroup;
+			children = (
+				B74A31561FDA7CE0009261D9 /* TickerFetcher.swift */,
+				B74A31521FDA7C9C009261D9 /* Ticker.swift */,
+				B74A31321FDA7C7F009261D9 /* AppDelegate.swift */,
+				B74A31361FDA7C7F009261D9 /* Assets.xcassets */,
+				B74A31381FDA7C7F009261D9 /* Main.storyboard */,
+				B74A313B1FDA7C7F009261D9 /* Info.plist */,
+				B74A313C1FDA7C7F009261D9 /* BitstampPrice.entitlements */,
+				B7E1F8EE1FDB008D007738DB /* Bitstamp.swift */,
+			);
+			path = BitstampPrice;
+			sourceTree = "<group>";
+		};
+		B74A31441FDA7C7F009261D9 /* BitstampPriceTests */ = {
+			isa = PBXGroup;
+			children = (
+				B74A31541FDA7CA3009261D9 /* BitstampPriceTests.swift */,
+				B74A31471FDA7C7F009261D9 /* Info.plist */,
+			);
+			path = BitstampPriceTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B74A312E1FDA7C7F009261D9 /* BitstampPrice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B74A314A1FDA7C7F009261D9 /* Build configuration list for PBXNativeTarget "BitstampPrice" */;
+			buildPhases = (
+				B74A312B1FDA7C7F009261D9 /* Sources */,
+				B74A312C1FDA7C7F009261D9 /* Frameworks */,
+				B74A312D1FDA7C7F009261D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BitstampPrice;
+			productName = BitstampPrice;
+			productReference = B74A312F1FDA7C7F009261D9 /* BitstampPrice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B74A31401FDA7C7F009261D9 /* BitstampPriceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B74A314D1FDA7C7F009261D9 /* Build configuration list for PBXNativeTarget "BitstampPriceTests" */;
+			buildPhases = (
+				B74A313D1FDA7C7F009261D9 /* Sources */,
+				B74A313E1FDA7C7F009261D9 /* Frameworks */,
+				B74A313F1FDA7C7F009261D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B74A31431FDA7C7F009261D9 /* PBXTargetDependency */,
+			);
+			name = BitstampPriceTests;
+			productName = BitstampPriceTests;
+			productReference = B74A31411FDA7C7F009261D9 /* BitstampPriceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B74A31271FDA7C7F009261D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = WasabitLabs;
+				TargetAttributes = {
+					B74A312E1FDA7C7F009261D9 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					B74A31401FDA7C7F009261D9 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B74A312E1FDA7C7F009261D9;
+					};
+				};
+			};
+			buildConfigurationList = B74A312A1FDA7C7F009261D9 /* Build configuration list for PBXProject "BitstampPrice" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B74A31261FDA7C7F009261D9;
+			productRefGroup = B74A31301FDA7C7F009261D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B74A312E1FDA7C7F009261D9 /* BitstampPrice */,
+				B74A31401FDA7C7F009261D9 /* BitstampPriceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B74A312D1FDA7C7F009261D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B74A31371FDA7C7F009261D9 /* Assets.xcassets in Resources */,
+				B74A313A1FDA7C7F009261D9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B74A313F1FDA7C7F009261D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B74A312B1FDA7C7F009261D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B74A31571FDA7CE0009261D9 /* TickerFetcher.swift in Sources */,
+				B7E1F8EF1FDB008D007738DB /* Bitstamp.swift in Sources */,
+				B74A31531FDA7C9C009261D9 /* Ticker.swift in Sources */,
+				B74A31331FDA7C7F009261D9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B74A313D1FDA7C7F009261D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B74A31551FDA7CA3009261D9 /* BitstampPriceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B74A31431FDA7C7F009261D9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B74A312E1FDA7C7F009261D9 /* BitstampPrice */;
+			targetProxy = B74A31421FDA7C7F009261D9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B74A31381FDA7C7F009261D9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B74A31391FDA7C7F009261D9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B74A31481FDA7C7F009261D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B74A31491FDA7C7F009261D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		B74A314B1FDA7C7F009261D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BitstampPrice/BitstampPrice.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G6J6A9KHM8;
+				INFOPLIST_FILE = BitstampPrice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasabitlabs.BitstampPrice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		B74A314C1FDA7C7F009261D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BitstampPrice/BitstampPrice.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G6J6A9KHM8;
+				INFOPLIST_FILE = BitstampPrice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasabitlabs.BitstampPrice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		B74A314E1FDA7C7F009261D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G6J6A9KHM8;
+				INFOPLIST_FILE = BitstampPriceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasabitlabs.BitstampPriceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitstampPrice.app/Contents/MacOS/BitstampPrice";
+			};
+			name = Debug;
+		};
+		B74A314F1FDA7C7F009261D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = G6J6A9KHM8;
+				INFOPLIST_FILE = BitstampPriceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wasabitlabs.BitstampPriceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitstampPrice.app/Contents/MacOS/BitstampPrice";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B74A312A1FDA7C7F009261D9 /* Build configuration list for PBXProject "BitstampPrice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B74A31481FDA7C7F009261D9 /* Debug */,
+				B74A31491FDA7C7F009261D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B74A314A1FDA7C7F009261D9 /* Build configuration list for PBXNativeTarget "BitstampPrice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B74A314B1FDA7C7F009261D9 /* Debug */,
+				B74A314C1FDA7C7F009261D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B74A314D1FDA7C7F009261D9 /* Build configuration list for PBXNativeTarget "BitstampPriceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B74A314E1FDA7C7F009261D9 /* Debug */,
+				B74A314F1FDA7C7F009261D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B74A31271FDA7C7F009261D9 /* Project object */;
+}
