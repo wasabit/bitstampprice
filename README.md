@@ -23,3 +23,6 @@ Follow these steps to compile Bitstamp Price on your own:
 3. In Xcode 9, go to Product > Archive, press Export Button and choose Developer ID.
 After a couple of questions you'll be able to select a folder to export the App.
 Go to this folder, and move the app into your /Applications folder.
+
+
+Or download it from https://github.com/wasabit/bitstampprice/releases unzip it and put it in your /Applications folder.
