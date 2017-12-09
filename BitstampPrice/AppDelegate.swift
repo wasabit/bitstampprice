@@ -17,6 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var fetchTimer: Timer!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        if #available(OSX 10.12.2, *) {
+            NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
+        }
+
         statusItem.menu = menu
         statusItem.title = "Fetching..."
 

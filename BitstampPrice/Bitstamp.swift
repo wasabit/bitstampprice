@@ -9,17 +9,19 @@
 import Cocoa
 
 class Bitstamp {
-    var tickerFetcher: TickerFetcher = BitstampFetcher()
+    lazy var tickerFetcher: TickerFetcher = BitstampFetcher()
 
     private let font = NSFont.systemFont(ofSize: 15)
     private let backgroundColor = NSColor.black
+
     private var formatedPrice: NSAttributedString = NSAttributedString(string: "0.00")
+
     private var lastPrice: Double = 0 {
         didSet {
             let color = makeColor(lastPrice, oldValue)
-            let attributes = [NSAttributedStringKey.foregroundColor: color,
-                              NSAttributedStringKey.font: font,
-                              NSAttributedStringKey.backgroundColor: backgroundColor] as [NSAttributedStringKey : Any]
+            let attributes = [NSAttributedString.Key.foregroundColor: color,
+                              NSAttributedString.Key.font: font,
+                              NSAttributedString.Key.backgroundColor: backgroundColor] as [NSAttributedString.Key : Any]
             formatedPrice = NSAttributedString(string: localizedPrice, attributes: attributes)
         }
     }
@@ -28,6 +30,8 @@ class Bitstamp {
         let formatter = NumberFormatter()
 
         formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
 
         if let formattedTipAmount = formatter.string(from: lastPrice as NSNumber) {
             return "$\(formattedTipAmount)"
