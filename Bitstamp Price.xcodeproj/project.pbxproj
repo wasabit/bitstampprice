@@ -162,6 +162,11 @@
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+						};
 					};
 					B74A31401FDA7C7F009261D9 = {
 						CreatedOnToolsVersion = 9.1;
@@ -373,6 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G6J6A9KHM8;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BitstampPrice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
@@ -393,6 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = G6J6A9KHM8;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BitstampPrice/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
