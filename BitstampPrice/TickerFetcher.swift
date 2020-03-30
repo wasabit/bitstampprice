@@ -7,5 +7,5 @@
 //
 
 protocol TickerFetcher {
-    func fetch(block: @escaping (BitstampTicker?) -> ())
+  func fetch(block: @escaping (BitstampTicker?) -> ())
 }
