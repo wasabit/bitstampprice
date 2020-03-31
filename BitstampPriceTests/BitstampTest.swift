@@ -20,15 +20,18 @@ class BitstampText: XCTestCase {
   }
   
   func testShowPriceWhite() {
-    sut.showPrice { _ in }
+    let tickerFetcher = sut.tickerFetcher as! FakeFetcher
+    
+    tickerFetcher.last = "0"
+
     sut.showPrice { (price) in
-      XCTAssertEqual(NSColor.white, self.priceColor(price))
+      XCTAssertEqual(.white, self.priceColor(price))
     }
   }
   
   func testShowPriceGreen() {
     sut.showPrice { (price) in
-      XCTAssertEqual(NSColor.green, self.priceColor(price))
+      XCTAssertEqual(.green, self.priceColor(price))
     }
   }
   
@@ -53,10 +56,10 @@ class BitstampText: XCTestCase {
 class FakeFetcher: TickerFetcher {
   var last = "123"
   
-  func fetch(block: @escaping (BitstampTicker?) -> ()) {
+  func fetch(then: @escaping (BitstampTicker?) -> ()) {
     let ticker = BitstampTicker(high: "123", last: last, timestamp: "123",
                                 bid: "123", vwap: "123", volume: "123",
                                 low: "123", ask: "123", open: 123)
-    block(ticker)
+    then(ticker)
   }
 }

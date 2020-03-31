@@ -11,32 +11,41 @@ import Cocoa
 class Bitstamp {
   lazy var tickerFetcher: TickerFetcher = BitstampFetcher()
   
-  private let font = NSFont.systemFont(ofSize: 15)
-  private let backgroundColor = NSColor.black
+  private let font: NSFont = .systemFont(ofSize: 15)
+  private let backgroundColor: NSColor = .black
+  private var foreColor: NSColor = .white
   
-  private var formatedPrice: NSAttributedString = NSAttributedString(string: "0.00")
+  private var formatedPrice: NSAttributedString {
+    let attributes = [
+      .foregroundColor: foreColor,
+      .font: font,
+      .backgroundColor: backgroundColor
+      ] as [NSAttributedString.Key : Any]
+    
+    return NSAttributedString(string: localizedPrice,
+                              attributes: attributes)
+  }
   
   private var lastPrice: Double = 0 {
     didSet {
-      let color = makeColor(lastPrice, oldValue)
-      let attributes = [NSAttributedString.Key.foregroundColor: color,
-                        NSAttributedString.Key.font: font,
-                        NSAttributedString.Key.backgroundColor: backgroundColor] as [NSAttributedString.Key : Any]
-      formatedPrice = NSAttributedString(string: localizedPrice, attributes: attributes)
+      guard lastPrice != oldValue else { return }
+      
+      foreColor = oldValue > lastPrice ? .red : .green
     }
   }
   
   private var localizedPrice: String {
     let formatter = NumberFormatter()
+    let priceValue = NSNumber(value: lastPrice)
     
     formatter.numberStyle = .decimal
     formatter.maximumFractionDigits = 2
     formatter.minimumFractionDigits = 2
     
-    if let formattedTipAmount = formatter.string(from: lastPrice as NSNumber) {
+    if let formattedTipAmount = formatter.string(from: priceValue) {
       return "$\(formattedTipAmount)"
     } else {
-      return "0.00"
+      return "No price"
     }
   }
   
@@ -46,17 +55,6 @@ class Bitstamp {
         self.lastPrice = Double(ticker.last)!
       }
       completion(self.formatedPrice)
-    }
-  }
-  
-  private func makeColor(_ lastPrice: Double, _ oldValue: Double) -> NSColor {
-    switch lastPrice {
-    case _ where lastPrice < oldValue:
-      return NSColor.red
-    case _ where lastPrice > oldValue:
-      return NSColor.green
-    default:
-      return NSColor.white
     }
   }
 }

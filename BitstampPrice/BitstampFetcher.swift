@@ -9,14 +9,10 @@
 import Foundation
 
 class BitstampFetcher: TickerFetcher {
-  private let url = "https://www.bitstamp.net/api/ticker/"
-  
-  func fetch(block: @escaping (BitstampTicker?) -> ()) {
-    var request = URLRequest(url: URL(string: url)!)
-    
-    request.httpMethod = "GET"
-    
-    let task = URLSession.shared.dataTask(with: request) { data, response, error in
+  func fetch(then completion: @escaping (BitstampTicker?) -> ()) {
+    let url = URL(string: "https://www.bitstamp.net/api/ticker/")!
+
+    let task = URLSession.shared.dataTask(with: url) { data, response, error in
       DispatchQueue.main.async {
         guard error == nil else { return }
         
@@ -27,7 +23,7 @@ class BitstampFetcher: TickerFetcher {
         
         let ticker = try? decoder.decode(BitstampTicker.self, from: data)
         
-        block(ticker)
+        completion(ticker)
       }
     }
     task.resume()

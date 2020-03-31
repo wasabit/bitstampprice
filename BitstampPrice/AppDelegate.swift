@@ -13,7 +13,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
   @IBOutlet weak var menu: NSMenu!
   
   let bitstamp = Bitstamp()
-  let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.variableLength)
+  let statusItem = NSStatusBar.system
+    .statusItem(withLength: NSStatusItem.variableLength)
+  
   var fetchTimer: Timer!
   
   func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -26,7 +28,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     updatePrice()
     
-    fetchTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updatePrice), userInfo: nil, repeats: true)
+    fetchTimer = Timer.scheduledTimer(timeInterval: 30,
+                                      target: self,
+                                      selector: #selector(updatePrice),
+                                      userInfo: nil,
+                                      repeats: true)
   }
   
   @objc func updatePrice() {
