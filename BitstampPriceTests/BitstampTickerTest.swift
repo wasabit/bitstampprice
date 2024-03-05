@@ -25,12 +25,12 @@ class BitstampTickerTest: XCTestCase {
         "open": 16599.99
       }
       """
-    
+
     let decoder = JSONDecoder()
     let data = jsonString.data(using: .utf8)!
-    
+
     let ticker = try? decoder.decode(BitstampTicker.self, from: data)
-    
+
     XCTAssertEqual("15198.96", ticker?.last)
   }
 }

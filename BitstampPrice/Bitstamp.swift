@@ -14,14 +14,14 @@ class Bitstamp {
   private let font: NSFont = .systemFont(ofSize: 15)
   private let backgroundColor: NSColor = .black
   private var foreColor: NSColor = .white
-  
+
   private var formatedPrice: NSAttributedString {
     let attributes = [
       .foregroundColor: foreColor,
       .font: font,
-      .backgroundColor: backgroundColor
+      .backgroundColor: backgroundColor,
       ] as [NSAttributedString.Key : Any]
-    
+
     return NSAttributedString(string: localizedPrice,
                               attributes: attributes)
   }
@@ -29,7 +29,7 @@ class Bitstamp {
   private var lastPrice: Double = 0 {
     didSet {
       guard lastPrice != oldValue else { return }
-      
+
       foreColor = oldValue > lastPrice ? .red : .green
     }
   }

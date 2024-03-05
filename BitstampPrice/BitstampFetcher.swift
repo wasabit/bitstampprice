@@ -15,14 +15,14 @@ class BitstampFetcher: TickerFetcher {
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
       DispatchQueue.main.async {
         guard error == nil else { return }
-        
-        let decoder = JSONDecoder()
+
         let status = (response as! HTTPURLResponse).statusCode
-        
+
         guard status == 200, let data = data else { return }
-        
+
+        let decoder = JSONDecoder()
         let ticker = try? decoder.decode(BitstampTicker.self, from: data)
-        
+
         completion(ticker)
       }
     }

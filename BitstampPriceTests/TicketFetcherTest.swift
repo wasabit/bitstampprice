@@ -13,12 +13,12 @@ class BitstampTickerFetcherTest: XCTestCase {
   func testFetch() {
     let sut = BitstampFetcher()
     let expect = expectation(description: "Foo")
-    
+
     sut.fetch { (ticker) in
       XCTAssertNotNil(ticker!.last)
       expect.fulfill()
     }
-    
+
     wait(for: [expect], timeout: 1)
   }
 }
