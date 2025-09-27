@@ -22,7 +22,7 @@ class BitstampTickerTest: XCTestCase {
         "volume": "26853.60919548",
         "low": "13482.42",
         "ask": "15177.98",
-        "open": 16599.99
+        "open": "16599.99"
       }
       """
 

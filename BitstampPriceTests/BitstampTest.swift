@@ -9,7 +9,7 @@
 import XCTest
 @testable import Bitstamp_Price
 
-class BitstampText: XCTestCase {
+class BitstampTest: XCTestCase {
   var sut: Bitstamp!
 
   override func setUp() {
@@ -57,9 +57,21 @@ class FakeFetcher: TickerFetcher {
   var last = "123"
 
   func fetch(then: @escaping (BitstampTicker?) -> ()) {
-    let ticker = BitstampTicker(high: "123", last: last, timestamp: "123",
-                                bid: "123", vwap: "123", volume: "123",
-                                low: "123", ask: "123", open: 123)
+    let ticker = BitstampTicker(
+      high: "123",
+      last: last,
+      timestamp: "123",
+      bid: "123",
+      vwap: "123",
+      volume: "123",
+      low: "123",
+      ask: "123",
+      open: "123",
+      side: "0",
+      open_24: "123",
+      percent_change_24: "0.0",
+      market_type: "SPOT"
+    )
     then(ticker)
   }
 }
