@@ -9,23 +9,53 @@
 import Foundation
 
 class BitstampFetcher: TickerFetcher {
-  func fetch(then completion: @escaping (BitstampTicker?) -> ()) {
-    let url = URL(string: "https://www.bitstamp.net/api/ticker/")!
-
-    let task = URLSession.shared.dataTask(with: url) { data, response, error in
-      DispatchQueue.main.async {
-        guard error == nil else { return }
-
-        let status = (response as! HTTPURLResponse).statusCode
-
-        guard status == 200, let data = data else { return }
-
-        let decoder = JSONDecoder()
-        let ticker = try? decoder.decode(BitstampTicker.self, from: data)
-
-        completion(ticker)
-      }
+    private let session = URLSession.shared
+    
+    func fetch(then completion: @escaping (BitstampTicker?) -> ()) {
+        // Modern approach with proper URL validation
+        guard let url = URL(string: "https://www.bitstamp.net/api/v2/ticker/btcusd/") else {
+            print("Invalid URL")
+            completion(nil)
+            return
+        }
+        
+        let task = session.dataTask(with: url) { data, response, error in
+            DispatchQueue.main.async {
+                // Better error handling
+                if let error = error {
+                    print("Network error: \(error.localizedDescription)")
+                    completion(nil)
+                    return
+                }
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    print("Invalid response type")
+                    completion(nil)
+                    return
+                }
+                
+                guard httpResponse.statusCode == 200 else {
+                    print("HTTP error: \(httpResponse.statusCode)")
+                    completion(nil)
+                    return
+                }
+                
+                guard let data = data else {
+                    print("No data received")
+                    completion(nil)
+                    return
+                }
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let ticker = try decoder.decode(BitstampTicker.self, from: data)
+                    completion(ticker)
+                } catch {
+                    print("Decoding error: \(error)")
+                    completion(nil)
+                }
+            }
+        }
+        task.resume()
     }
-    task.resume()
-  }
 }

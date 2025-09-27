@@ -8,40 +8,55 @@
 
 import Cocoa
 
-@NSApplicationMain
+@main
 class AppDelegate: NSObject, NSApplicationDelegate {
-  @IBOutlet weak var menu: NSMenu!
-
-  let bitstamp = Bitstamp()
-  let statusItem = NSStatusBar.system
-    .statusItem(withLength: NSStatusItem.variableLength)
-
-  var fetchTimer: Timer!
-
-  func applicationDidFinishLaunching(_ aNotification: Notification) {
-    if #available(OSX 10.12.2, *) {
-      NSApplication.shared.isAutomaticCustomizeTouchBarMenuItemEnabled = true
+    @IBOutlet weak var menu: NSMenu!
+    
+    private let bitstamp = Bitstamp()
+    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    private var fetchTimer: Timer?
+    
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        setupStatusItem()
+        startPeriodicUpdates()
     }
-
-    statusItem.menu = menu
-    statusItem.button?.title = "Fetching..."
-
-    updatePrice()
-
-    fetchTimer = Timer.scheduledTimer(timeInterval: 30,
-                                      target: self,
-                                      selector: #selector(updatePrice),
-                                      userInfo: nil,
-                                      repeats: true)
-  }
-
-  @objc func updatePrice() {
-    bitstamp.showPrice { (price) in
-      self.statusItem.button?.attributedTitle = price
+    
+    private func setupStatusItem() {
+        statusItem.menu = menu
+        statusItem.button?.title = "₿ Fetching..."
+        
+        // Add a quit menu item if not already present
+        if menu.items.isEmpty {
+            let quitMenuItem = NSMenuItem(title: "Quit Bitstamp Price", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
+            menu.addItem(quitMenuItem)
+        }
     }
-  }
-
-  func applicationWillTerminate(_ aNotification: Notification) {
-    fetchTimer.invalidate()
-  }
+    
+    private func startPeriodicUpdates() {
+        // Initial update
+        updatePrice()
+        
+        // Schedule periodic updates every 30 seconds
+        fetchTimer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true) { [weak self] _ in
+            self?.updatePrice()
+        }
+    }
+    
+    @objc private func updatePrice() {
+        bitstamp.showPrice { [weak self] price in
+            DispatchQueue.main.async {
+                self?.statusItem.button?.attributedTitle = price
+            }
+        }
+    }
+    
+    func applicationWillTerminate(_ aNotification: Notification) {
+        fetchTimer?.invalidate()
+        fetchTimer = nil
+    }
+    
+    // Add menu actions
+    @IBAction func refreshPrice(_ sender: Any) {
+        updatePrice()
+    }
 }
