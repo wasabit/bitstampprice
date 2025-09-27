@@ -19,7 +19,7 @@ class Bitstamp {
         let attributes = [
             .foregroundColor: foreColor,
             .font: font,
-            .baselineOffset: NSNumber(value: 0) // Remove custom baseline offset to use system default
+            .baselineOffset: NSNumber(value: -1) // Better alignment with other menu bar items
         ] as [NSAttributedString.Key : Any]
 
         return NSAttributedString(string: localizedPrice,
@@ -33,10 +33,10 @@ class Bitstamp {
             // Use appearance-aware colors with better contrast
             if oldValue > lastPrice {
                 // Price decreased - use red with better contrast for both light and dark modes
-                foreColor = NSColor(named: NSColor.Name("PriceDownColor")) ?? 
+                foreColor = NSColor(named: NSColor.Name("PriceDownColor")) ??
                            NSColor.systemRed.withSystemEffect(.deepPressed)
             } else {
-                // Price increased - use green with better contrast for both light and dark modes  
+                // Price increased - use green with better contrast for both light and dark modes
                 foreColor = NSColor(named: NSColor.Name("PriceUpColor")) ??
                            NSColor.systemGreen.withSystemEffect(.deepPressed)
             }
