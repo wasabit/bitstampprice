@@ -12,14 +12,12 @@ class Bitstamp {
     lazy var tickerFetcher: TickerFetcher = BitstampFetcher()
     
     private let font: NSFont = .systemFont(ofSize: 15)
-    private let backgroundColor: NSColor = .black
     private var foreColor: NSColor = .white
     
     private var formattedPrice: NSAttributedString {
         let attributes = [
             .foregroundColor: foreColor,
             .font: font,
-            .backgroundColor: backgroundColor,
         ] as [NSAttributedString.Key : Any]
         
         return NSAttributedString(string: localizedPrice,
